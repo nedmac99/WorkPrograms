@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Form Automation Helper</title>
+	<link rel="stylesheet" href="style.css" />
+	<style>
+		body { font-family: system-ui, sans-serif; padding: 10px; min-width: 280px; }
+		.row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+		label { font-size: 12px; color: #333; }
+		input { padding: 6px; font-size: 12px; }
+		button { padding: 8px 10px; }
+		#status { margin-top: 6px; font-size: 12px; }
+	</style>
+	</head>
+<body>
+	<div class="toolbar">
+		<div class="brand">Stratus Helper</div>
+		<button id="themeToggle" type="button" title="Theme: Auto">Auto</button>
+	</div>
+	<h3>Hours / Purity Section</h3>
+	<form id="hoursPurityForm">
+		<div class="row">
+			<label for="hoursIn">Hours in</label>
+			<input id="hoursIn" type="number" inputmode="numeric" min="0" max="99999" step="1" placeholder="e.g., 12345" />
+		</div>
+		<div class="row">
+			<label for="oxygenPurity">Initial Oxygen Purity</label>
+			<input id="oxygenPurity" type="number" inputmode="decimal" min="21" max="99.9" step="0.1" placeholder="e.g., 92.0" />
+		</div>
+		<div class="row">
+			<label for="partNumber">Bed Serial Number (scan or type)</label>
+			<input id="partNumber" type="text" placeholder="Scan QR here" />
+		</div>
+
+		<h4 style="margin-top:8px;">Final Test Results</h4>
+		<div class="row">
+			<label for="oxygenPurity2">Ending Oxygen Purity @ 2 LPM</label>
+			<input id="oxygenPurity2" type="number" inputmode="decimal" min="0" max="99.9" step="0.1" placeholder="e.g., 92.0" />
+		</div>
+		<div class="row">
+			<label for="oxygenPurity5">Ending Oxygen Purity @ 5 LPM</label>
+			<input id="oxygenPurity5" type="number" inputmode="decimal" min="0" max="99.9" step="0.1" placeholder="e.g., 90.0" />
+		</div>
+		<div class="row">
+			<label for="psiValue">PSI</label>
+			<input id="psiValue" type="number" inputmode="decimal" min="0" max="99.9" step="0.1" placeholder="e.g., 8.5" />
+		</div>
+		<div class="row">
+			<label for="hoursOut">Hours Out</label>
+			<input id="hoursOut" type="number" inputmode="numeric" min="0" max="99999" step="1" placeholder="e.g., 12346" />
+		</div>
+		<div style="display:flex; gap:8px; align-items:center; flex-wrap: wrap;">
+			<button id="saveValuesBtn" type="button">Save Values</button>
+			<button id="runAutomationBtn" type="button">Run Automation</button>
+			<button id="runPartsBtn" type="button">Run Parts Table</button>
+			<button id="runSerialBtn" type="button">Run Serial Fill</button>
+			<button id="runPartsSerialBtn" type="button">Run Parts + Serial</button>
+		</div>
+		<div id="status"></div>
+	</form>
+
+	<!-- Removed separate confirm button; combined into Run Automation -->
+	<!-- Removed the separate Run Failure Reason button; it runs within Run Automation -->
+
+	<details style="margin-top:12px;">
+		<summary>Selector Settings</summary>
+		<div class="row" style="margin-top:8px;">
+			<label for="hpSelHours">Hours in selector</label>
+			<input id="hpSelHours" type="text" placeholder="#txtHoursIn" />
+		</div>
+		<div class="row">
+			<label for="hpSelPurity">Oxygen purity selector</label>
+			<input id="hpSelPurity" type="text" placeholder="#txtO2In" />
+		</div>
+		<div class="row">
+			<label for="hpSelSubmit">Submit button selector</label>
+			<input id="hpSelSubmit" type="text" placeholder="#start" />
+		</div>
+		<hr />
+		<div class="row">
+			<label for="cpSelYes">Confirm issue: Yes radio</label>
+			<input id="cpSelYes" type="text" placeholder="#radConfirmIssue" />
+		</div>
+		<div class="row">
+			<label for="cpSelNo">Smoke smell: No radio</label>
+			<input id="cpSelNo" type="text" placeholder="#radSmokeNo" />
+		</div>
+		<div style="display:flex; gap:8px;">
+			<button id="hpSaveSelectors" type="button">Save Selectors</button>
+			<button id="hpClearSelectors" type="button">Clear Stored</button>
+		</div>
+		<div id="selectorStatus" style="margin-top:6px; font-size:12px;"></div>
+	</details>
+
+	<details style="margin-top:12px;">
+		<summary>Failure Reason Selectors</summary>
+		<div class="row" style="margin-top:8px;">
+			<label for="frSelQ1">Q1 radio selector</label>
+			<input id="frSelQ1" type="text" placeholder="#radRepairYes" />
+		</div>
+		<div class="row">
+			<label for="frSelQ2">Q2 radio selector</label>
+			<input id="frSelQ2" type="text" placeholder="#radAbuseNo" />
+		</div>
+		<div class="row">
+			<label for="frSelCheckbox">First checkbox selector</label>
+			<input id="frSelCheckbox" type="text" placeholder="#1" />
+		</div>
+		<div class="row">
+			<label for="frSelContainer">Reasons table/container</label>
+			<input id="frSelContainer" type="text" placeholder="#reasonsTableContainer" />
+		</div>
+		<div class="row">
+			<label for="frSelConfirm">Confirm button selector</label>
+			<input id="frSelConfirm" type="text" placeholder="#btnRepairStatus" />
+		</div>
+	</details>
+
+
+
+	<details style="margin-top:12px;">
+		<summary>Parts Table Selectors</summary>
+		<div class="row" style="margin-top:8px;">
+			<label for="ptSelContainer">Table/container selector</label>
+			<input id="ptSelContainer" type="text" placeholder="#partsTableContainer" />
+		</div>
+		<div class="row">
+			<label for="ptSelRow">Row selector</label>
+			<input id="ptSelRow" type="text" placeholder="tr.part-row" />
+		</div>
+		<div class="row">
+			<label for="ptSelNo">No radio within row</label>
+			<input id="ptSelNo" type="text" placeholder="input[type=radio][value='0']" />
+		</div>
+		<div class="row">
+			<label for="ptSelSpecificYes">Specific Yes radio</label>
+			<input id="ptSelSpecificYes" type="text" placeholder="#yesForTargetPart" />
+		</div>
+	</details>
+
+	<details style="margin-top:12px;">
+		<summary>Serial Popup Selectors</summary>
+		<div class="row" style="margin-top:8px;">
+			<label for="spSelCheckbox">Confirm checkbox (opens popup)</label>
+			<input id="spSelCheckbox" type="text" placeholder="#confirmPartsCheckbox" />
+		</div>
+		<div class="row">
+			<label for="spSelSerial">Serial input field</label>
+			<input id="spSelSerial" type="text" placeholder="#serialInput" />
+		</div>
+		<div class="row">
+			<label for="spSelSubmit">Submit/OK button (optional)</label>
+			<input id="spSelSubmit" type="text" placeholder="#serialOkBtn" />
+		</div>
+	</details>
+
+	<details id="partsPanel" style="margin-top:12px;">
+		<summary>Parts Selections</summary>
+		<!-- JSON config removed; parts list loads automatically from the page -->
+		<div class="row">
+			<label>Choose parts to set Yes + diagnosis</label>
+			<div id="partsCheckboxes" style="display:flex; flex-direction:column; gap:4px;"></div>
+		</div>
+		<div style="display:flex; gap:8px; align-items:center; flex-wrap: wrap;">
+			<button id="refreshPartsBtn" type="button">Refresh Parts List</button>
+			<button id="savePartsSelectionsBtn" type="button">Save Parts Selections</button>
+			<button id="clearPartsSelectionsBtn" type="button">Clear Parts Selections</button>
+		</div>
+		<div id="partsStatus" style="margin-top:6px; font-size:12px;"></div>
+	</details>
+
+	<script src="popup.js"></script>
+</body>
+</html>
