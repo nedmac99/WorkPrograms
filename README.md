@@ -136,8 +136,6 @@ This project is developed for personal and workplace use. All rights reserved.
 
 <div align="center">
 
-**Built with ❤️ for workplace efficiency**
-
 *Last Updated: February 2026*
 
 </div>
