@@ -9,7 +9,7 @@ This Chrome extension streamlines internal repair forms by filling:
 
 ## Setup
 1. Chrome → Extensions → Enable Developer mode
-2. Load unpacked → select this `Work_Automation_V2` folder
+2. Load unpacked → select this `stratus_mw_form_automation` folder
 3. Pin the extension for quick access
 
 ## Use

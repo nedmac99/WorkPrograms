@@ -4,8 +4,8 @@ A collection of programs I created to help improve efficiency at my job. These t
 
 ## Programs
 
-### Form Automation Helper
-**Location:** `Final_Form_automation/`
+### Stratus MW Form Automation
+**Location:** `stratus_mw_form_automation/`
 
 A Chrome extension (Manifest V3) that automates filling out internal repair forms. Features include:
 - Auto-filling System Hours, Oxygen Purity, and other prompts
@@ -15,7 +15,7 @@ A Chrome extension (Manifest V3) that automates filling out internal repair form
 - Dry Run mode for previewing actions before submission
 - Local storage of values via Chrome sync
 
-See the [Form Automation README](Final_Form_automation/README.md) for setup and usage instructions.
+See the [Form Automation README](stratus_mw_form_automation/README.md) for setup and usage instructions.
 
 ### Parts List Tracker
 **Location:** `Parts List/`
@@ -24,20 +24,6 @@ A Python script for tracking RMA numbers and associated parts. Provides a simple
 - Log RMA entries
 - Record multiple parts per entry
 - Save data to a persistent text file
-
-### File IO Utilities
-**Location:** `File IO/`
-
-Python scripts for CSV file processing and data transformation, including tools for reorganizing and reformatting data files.
-
-### Python Code Collection
-**Location:** `py_codes/`
-
-A collection of Python scripts and projects including:
-- **data_scrape** - Web scraping utilities
-- **erd** - ERD and passenger check-in tools
-- **projects** - Various mini-projects (O2 inventory, data analysis, etc.)
-- **etc** - Python learning exercises and utility scripts
 
 ## Getting Started
 
