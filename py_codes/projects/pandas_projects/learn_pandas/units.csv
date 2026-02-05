@@ -1,9 +1,0 @@
-Concentrator_type,Model,RMA,Warranty_type,Revenue,Flow_rate,Repair_status,Noise_level,Battery_level,Age
-PortableConcentrator,P2,QM54321,Flat rate,298.98,1.0,Not completed,N/A,89,N/A
-PediatricConcentrator,525DDP,QM6789,Flat rate,299.98,2.0,Completed,N/A,N/A,7
-HomeConcentrator,1025DD,QM42069,Flat rate,375.98,10.0,Not completed,88.0,N/A,N/A
-HomeConcentrator,EVERFLOW,QM69420,Flat rate,299.98,5.0,Not completed,77.0,N/A,N/A
-PediatricConcentrator,EVERFLOW Q,QM1999,Flat rate,299.98,2.0,Not completed,N/A,N/A,8
-PortableConcentrator,LIFESTYLE,QM696969,QM Warranty,0.0,0.0,Completed,N/A,69,N/A
-HomeConcentrator,525DD,QM12345,Manufacture Warranty,45.0,5.0,Completed,76.0,N/A,N/A
-PortableConcentrator,P2,QM1106727,Flat rate,299.98,0.0,Not completed,N/A,76,N/A
