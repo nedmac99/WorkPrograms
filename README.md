@@ -1,6 +1,6 @@
 # WorkPrograms
 
-A collection of programs I created to help improve efficiency at my job. These tools automate repetitive tasks and streamline daily workflows.
+A collection of programs I created to help improve efficiency at my jobsite. These tools automate repetitive tasks and streamline daily workflows.
 
 ## Programs
 
