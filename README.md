@@ -4,7 +4,7 @@ A collection of programs I created to help improve efficiency at my jobsite. The
 
 ## Programs
 
-### Stratus MW Form Automation
+### Stratus Manufacture Warranty Form Automation
 **Location:** `stratus_mw_form_automation/`
 
 A Chrome extension (Manifest V3) that automates filling out internal repair forms. Features include:
