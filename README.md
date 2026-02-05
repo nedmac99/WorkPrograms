@@ -21,7 +21,7 @@ See the [Form Automation README](stratus_mw_form_automation/README.md) for setup
 **Location:** `Parts List/`
 
 A Python script for tracking RMA numbers and associated parts. Provides a simple interface to:
-- Log RMA entries
+- Log Serial number entries
 - Record multiple parts per entry
 - Save data to a persistent text file
 
