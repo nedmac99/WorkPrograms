@@ -25,14 +25,10 @@ A Python script for tracking RMA numbers and associated parts. Provides a simple
 - Record multiple parts per entry
 - Save data to a persistent text file
 
-### Python Code Collection
-**Location:** `py_codes/`
+### Weighted Output Tracker
+**Location:** `weighted_output_tracker/`
 
-A collection of Python scripts and projects including:
-- **data_scrape** - Web scraping utilities
-- **erd** - ERD and passenger check-in tools
-- **projects** - Various mini-projects (O2 inventory, data analysis, etc.)
-- **etc** - Python learning exercises and utility scripts
+A tool for tracking and analyzing weighted output data for work efficiency metrics.
 
 ## Getting Started
 
