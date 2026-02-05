@@ -1,0 +1,52 @@
+# WorkPrograms
+
+A collection of programs I created to help improve efficiency at my job. These tools automate repetitive tasks and streamline daily workflows.
+
+## Programs
+
+### Form Automation Helper
+**Location:** `Final_Form_automation/`
+
+A Chrome extension (Manifest V3) that automates filling out internal repair forms. Features include:
+- Auto-filling System Hours, Oxygen Purity, and other prompts
+- Populating Diagnostic Analysis, Parts Used, and Notes fields
+- Handling Ending Test Results (Flow, O2 Purity, PSI, Hours Out, etc.)
+- Parts table automation with confirmation handling
+- Dry Run mode for previewing actions before submission
+- Local storage of values via Chrome sync
+
+See the [Form Automation README](Final_Form_automation/README.md) for setup and usage instructions.
+
+### Parts List Tracker
+**Location:** `Parts List/`
+
+A Python script for tracking RMA numbers and associated parts. Provides a simple interface to:
+- Log RMA entries
+- Record multiple parts per entry
+- Save data to a persistent text file
+
+### File IO Utilities
+**Location:** `File IO/`
+
+Python scripts for CSV file processing and data transformation, including tools for reorganizing and reformatting data files.
+
+### Python Code Collection
+**Location:** `py_codes/`
+
+A collection of Python scripts and projects including:
+- **data_scrape** - Web scraping utilities
+- **erd** - ERD and passenger check-in tools
+- **projects** - Various mini-projects (O2 inventory, data analysis, etc.)
+- **etc** - Python learning exercises and utility scripts
+
+## Getting Started
+
+Each program has its own requirements. Please refer to the specific folders for detailed setup instructions.
+
+### Prerequisites
+- Python 3.x (for Python scripts)
+- Google Chrome (for the Form Automation extension)
+
+## License
+
+This project is for personal and workplace use.
